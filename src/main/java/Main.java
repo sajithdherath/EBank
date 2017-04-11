@@ -17,19 +17,14 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
         primaryStage.setTitle("E-banking System");
         Scene scene = new Scene(root, 960, 560);
-
         scene.getStylesheets().add(getClass().getResource("css.css").toExternalForm());
         primaryStage.setScene(scene);
-
         primaryStage.show();
-
     }
 
 
     public static void main(String[] args) {
         launch(args);
-
-
     }
 }
 
