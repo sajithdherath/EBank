@@ -48,7 +48,7 @@ public class Controller{
                 if(txtuserName.getText().equals(usrName)&&txtpassword.getText().equals(password)){
 
                     System.out.println("logged");
-                    Parent custPage = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
+                    Parent custPage = FXMLLoader.load(getClass().getResource("register.fxml"));
                     FadeTransition ft = new FadeTransition(Duration.millis(150), custPage);
                     ft.setFromValue(0.0);
                     ft.setToValue(1.0);
