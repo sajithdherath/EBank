@@ -1,60 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="960.0" styleClass="pane" stylesheets="@css.css" xmlns="http://javafx.com/javafx/8.0.71" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<Pane fx:id="paneRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="960.0" style="-fx-background-color: #ffffff;" styleClass="pane" stylesheets="@css.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
     <children>
-        <GridPane layoutX="280.0" layoutY="146.0" prefHeight="209.0" prefWidth="394.0">
-            <columnConstraints>
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            </columnConstraints>
-            <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            </rowConstraints>
-            <children>
-                <TextField fx:id="txtuserName" GridPane.columnIndex="1" />
-                <PasswordField fx:id="txtpassword" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                <Label text="USERNAME" textFill="WHITE">
-                    <font>
-                        <Font name="Roboto Bold" size="24.0" />
-                    </font>
-                </Label>
-                <Label text="PASSWORD" textFill="WHITE" GridPane.rowIndex="1">
-                    <font>
-                        <Font name="Roboto Bold" size="24.0" />
-                    </font>
-                </Label>
-            </children>
-        </GridPane>
-        <Button fx:id="login" layoutX="406.0" layoutY="364.0" mnemonicParsing="false" onAction="#login" prefHeight="61.0" prefWidth="148.0" styleClass="btnLogIn" stylesheets="@css.css" text="Log In" textFill="WHITE">
-            <font>
-                <Font name="Roboto Regular" size="23.0" />
-            </font>
-        </Button>
-        <Label layoutX="272.0" layoutY="56.0" text="Welcome to SOB E-banking System">
-            <font>
-                <Font name="Roboto Regular" size="32.0" />
-            </font>
-            <textFill>
-                <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.46190476190476193">
-                    <stops>
-                        <Stop color="#907840" />
-                        <Stop color="#d3cf5e" offset="1.0" />
-                    </stops>
-                </LinearGradient>
-            </textFill>
-        </Label>
+      <Pane layoutX="118.0" layoutY="50.0" prefHeight="465.0" prefWidth="725.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="288.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@contacts-256.png" />
+               </image>
+            </ImageView>
+            <JFXTextField fx:id="txtuserName" focusColor="#53a3c3" layoutX="257.0" layoutY="197.0" prefHeight="25.0" prefWidth="212.0" promptText="Username">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXPasswordField fx:id="txtpassword" focusColor="#53a3c3" layoutX="257.0" layoutY="274.0" prefHeight="25.0" prefWidth="212.0" promptText="Password">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXPasswordField>
+            <JFXButton fx:id="login" buttonType="RAISED" layoutX="282.0" layoutY="376.0" onAction="#login" prefHeight="33.0" prefWidth="163.0" ripplerFill="WHITE" style="-fx-background-color: #2196F3;" text="LogIn" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </JFXButton>
+         </children>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" />
+         </effect>
+      </Pane>
     </children>
 </Pane>

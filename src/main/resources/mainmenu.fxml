@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="960.0" styleClass="pane" stylesheets="@css.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<Pane fx:id="paneMainMenu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="960.0" style="-fx-background-color: #ffffff;" styleClass="pane" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
     <children>
-        <Label layoutX="272.0" layoutY="56.0" text="Welcome to SOB E-banking System">
+        <Label layoutX="261.0" layoutY="52.0" text="Welcome to E-banking System">
             <font>
                 <Font name="Roboto Regular" size="32.0" />
             </font>
@@ -21,5 +23,22 @@
                 </LinearGradient>
             </textFill>
         </Label>
+      <Pane layoutX="125.0" layoutY="127.0" prefHeight="347.0" prefWidth="728.0" style="-fx-background-color: #ffffff;">
+         <effect>
+            <DropShadow blurType="GAUSSIAN" />
+         </effect>
+         <children>
+            <JFXButton buttonType="RAISED" layoutX="114.0" layoutY="136.0" ripplerFill="WHITE" style="-fx-background-color: #2196F3;" text="Employee page">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="429.0" layoutY="136.0" style="-fx-background-color: #2196F3;" text="Customer List">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
     </children>
 </Pane>

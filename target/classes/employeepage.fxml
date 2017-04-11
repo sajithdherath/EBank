@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="960.0" styleClass="pane" stylesheets="@css.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+    <children>
+        <Label layoutX="272.0" layoutY="56.0" text="Welcome to SOB E-banking System">
+            <font>
+                <Font name="Roboto Regular" size="32.0" />
+            </font>
+            <textFill>
+                <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.46190476190476193">
+                    <stops>
+                        <Stop color="#907840" />
+                        <Stop color="#d3cf5e" offset="1.0" />
+                    </stops>
+                </LinearGradient>
+            </textFill>
+        </Label>
+    </children>
+</Pane>

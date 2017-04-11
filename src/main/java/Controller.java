@@ -1,6 +1,8 @@
 /**
  * Created by sajith on 4/11/17.
  */
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
 import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,6 +11,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import java.io.IOException;
@@ -24,10 +27,15 @@ public class Controller{
     PreparedStatement preparedStatement=null;
 
     @FXML
-    TextField txtuserName,txtpassword,txtSetUsername,txtSetPassword,txtSetPosition,txtSetName;
+    TextField txtSetUsername,txtSetPassword,txtSetPosition,txtSetName;
+    @FXML
+    JFXTextField txtuserName;
+    @FXML
+    JFXPasswordField txtpassword;
     @FXML
     TextField txtMark;
-
+    @FXML
+    Pane paneRoot;
 
     public void dbConn() throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.jdbc.Driver");
@@ -36,6 +44,7 @@ public class Controller{
         stmnt = connection.createStatement();
     }
 
+    @FXML
     public void login(ActionEvent actionEvent) {
         try {
             dbConn();
@@ -48,14 +57,15 @@ public class Controller{
                 if(txtuserName.getText().equals(usrName)&&txtpassword.getText().equals(password)){
 
                     System.out.println("logged");
-                    Parent custPage = FXMLLoader.load(getClass().getResource("register.fxml"));
-                    FadeTransition ft = new FadeTransition(Duration.millis(150), custPage);
+                    Pane paneLogin = FXMLLoader.load(getClass().getResource("mainmenu.fxml"));
+                    /*FadeTransition ft = new FadeTransition(Duration.millis(150), paneLogin);
                     ft.setFromValue(0.0);
                     ft.setToValue(1.0);
-                    ft.play();
-                    Scene mainPageScene = new Scene(custPage);
+                    ft.play();*/
+                    paneRoot.getChildren().setAll(paneLogin);
+                    /*Scene mainPageScene = new Scene(custPage);
                     Stage appStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                    appStage.setScene(mainPageScene);
+                    appStage.setScene(mainPageScene);*/
                     if(rs.getString("position").equals("clark")){
                         setTxt(false);
                     }else{
